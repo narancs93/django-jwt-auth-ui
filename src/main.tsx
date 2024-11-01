@@ -5,6 +5,7 @@ import "uikit/dist/css/uikit.min.css";
 import "uikit/dist/js/uikit-core.js";
 import "uikit/dist/js/uikit.js";
 import App from "./App.tsx";
+import "./main.css";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
