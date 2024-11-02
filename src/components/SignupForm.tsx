@@ -1,6 +1,7 @@
 import { useMutation } from "@tanstack/react-query";
 import { AxiosError } from "axios";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import SignupData from "../interfaces/SignupData";
 import SignupErrorResponse from "../interfaces/SignupErrorResponse";
@@ -12,11 +13,12 @@ const StyledSignupForm = styled.form`
 
 function SignupForm() {
   const { register, handleSubmit } = useForm<SignupData>();
+  const navigate = useNavigate();
 
   const mutation = useMutation({
     mutationFn: signup,
-    onSuccess: (data) => {
-      console.log(data);
+    onSuccess: () => {
+      navigate("/signup-success");
     },
   });
 
